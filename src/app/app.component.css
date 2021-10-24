@@ -1,0 +1,16 @@
+:host {
+  display: block;
+  height: 100vh;
+  min-height: 540px;
+}
+
+/* Header */
+header {
+  display: block;
+  text-align: center;
+}
+
+.quiz-controls {
+  text-align: end;
+  padding: 0 5vh;
+}
