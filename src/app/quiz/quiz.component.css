@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  height: 70vh;
+  min-height: 470px;
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+  overflow: scroll;
+}

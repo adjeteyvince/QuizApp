@@ -2,15 +2,34 @@
   display: block;
   height: 100vh;
   min-height: 540px;
+  overflow: hidden;
 }
 
 /* Header */
 header {
   display: block;
   text-align: center;
+  box-shadow: black 0px 5px 10px;
+  background-color: lightseagreen;
+}
+header p {
+  font-size: small;
+}
+header h2 {
+  font-size: larger;
 }
 
 .quiz-controls {
-  text-align: end;
-  padding: 0 5vh;
+  display: flex;
+  flex-direction: row-reverse;
+  padding: 1vh 5vh;
+}
+input {
+  background: none;
+  outline: none;
+  border: none;
+  font-family: monospace;
+  font-weight: bolder;
+  font-size: x-large;
+  color: chartreuse;
 }
