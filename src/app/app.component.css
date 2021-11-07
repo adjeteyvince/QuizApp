@@ -7,10 +7,11 @@
 
 /* Header */
 header {
+  padding-top: 1vh;
   display: block;
   text-align: center;
-  box-shadow: black 0px 5px 10px;
-  background-color: lightseagreen;
+  box-shadow: rgb(0, 11, 20) 0px 5px 25px;
+  background-color: #17847e;
 }
 header p {
   font-size: small;
@@ -23,6 +24,7 @@ header h2 {
   display: flex;
   flex-direction: row-reverse;
   padding: 1vh 5vh;
+  padding-top: 0;
 }
 input {
   background: none;
@@ -32,4 +34,53 @@ input {
   font-weight: bolder;
   font-size: x-large;
   color: chartreuse;
+}
+
+#marks {
+  position: absolute;
+  display: grid;
+  grid-template-rows: 1fr 5px 1fr;
+  align-items: center;
+  left: 5vw;
+  top: 10vw;
+  width: 35vw;
+  height: 35vw;
+  border-radius: 50%;
+  border-style: double;
+  border: 0.25em dashed rgba(255, 0, 0, 0.75);
+  background-color: rgba(52, 72, 92, 0.712);
+  text-align: center;
+  transform: rotate(-30deg);
+}
+.score {
+  margin: auto;
+  transform: rotate(30deg);
+  font-size: xx-large;
+  font-weight: bold;
+  color: #f9f871;
+}
+.excel {
+  border-color: lightskyblue !important;
+  font-size: smaller;
+  text-shadow: #f9f871 0px 0px 10px;
+}
+.score-divider {
+  width: 80%;
+  margin: auto;
+  padding-top: 0.15em;
+  border-top: 3px dashed rgba(255, 0, 0, 0.75);
+}
+
+@media screen and (min-width: 40em) {
+  #questions {
+    column-count: 2;
+    column-gap: 5em;
+    column-rule: solid rgb(84, 95, 105);
+  }
+
+  #marks {
+    top: 5vh;
+    width: 20vw;
+    height: 20vw;
+  }
 }

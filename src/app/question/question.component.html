@@ -1,1 +1,10 @@
-<p>question works!</p>
+<div class="question">
+  <p>{{questionNumber}}. {{question.question}}</p>
+  <div class="options">
+    <button *ngFor="let options of question.options"
+      (click)="optionSelected(options.option)" [disabled]="checkState()"
+       [class.selected] = "question.selectedAnswer == options.option">
+      {{options.option}}). {{options.answer}}
+    </button>
+  </div>
+</div>

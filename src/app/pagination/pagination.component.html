@@ -1,5 +1,5 @@
 <div id="pagination" >
-  <button id="btn_prev">Prev</button>
-  <span> 1 of 5</span>
-  <button id="btn_next">Next</button>
+  <button id="btn_prev" (click)="prevPage()" [disabled]=prevState()>Prev</button>
+  <span> {{ currentPageNumber }} of {{ numberOfPages }}</span>
+  <button id="btn_next" (click)="nextPage()" [disabled]=nextState()>Next</button>
 </div>

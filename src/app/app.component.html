@@ -1,14 +1,30 @@
 <header>
   <h1>Adjetey's Quiz App</h1>
-  <h2>There are 10 questions to answer </h2>
+  <h2>There are {{sizeOfQuizes}} questions to answer </h2>
   <p>Best of luck</p>
   <div class="quiz-controls" [ngSwitch]="state">
-    <input type="button" value="START" *ngSwitchCase="'Start'" (click)="switchState()">
-    <input type="button" value="SUBMIT" *ngSwitchCase="'Submit'" (click)="switchState()">
-    <input type="button" value="RETRY" *ngSwitchCase="'Retry'" (click)="switchState()">
+    <input type="button" value="START" *ngSwitchCase="'Start'" (click)="start()">
+    <input type="button" value="SUBMIT" *ngSwitchCase="'Submit'" (click)="mark()">
+    <input type="button" value="RETRY" *ngSwitchCase="'Retry'" (click)="retry()">
   </div>
 </header>
 
-<app-quiz></app-quiz>
+<div id="marks" *ngIf="state == 'Retry'" [class.excel]="correctAnswerCount>7">
+  <p class="score">{{correctAnswerCount}}</p>
 
-<app-pagination></app-pagination>
+  <div class="score-divider" [class.excel]="correctAnswerCount>7">
+    <p *ngIf="correctAnswerCount>7">EXCELLENT</p>
+  </div>
+
+  <p class="score">{{ sizeOfQuizes }}</p>
+</div>
+
+<app-quiz
+[questions]="currentPageQuizes"
+[state]="state"
+[currentPageNumber]="current_page"
+[records_per_page]="records_per_page"></app-quiz>
+
+<app-pagination *ngIf="state !='Start'" (changePage)="loadPage($event)"
+[currentPageNumber]="current_page"
+[numberOfPages]="numPages()"></app-pagination>
