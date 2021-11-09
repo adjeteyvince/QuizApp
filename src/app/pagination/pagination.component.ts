@@ -23,15 +23,11 @@ export class PaginationComponent implements OnInit {
 
   nextPage(){
     this.currentPageNumber++;
-    console.log("Next Page ::: " + this.currentPageNumber);
     this.changePage.emit(this.currentPageNumber);
-    return this.currentPageNumber;
   }
   prevPage(){
     this.currentPageNumber--;
-    console.log("Prev Page ::: " + this.currentPageNumber);
     this.changePage.emit(this.currentPageNumber);
-    return this.currentPageNumber;
   }
 
   prevState(){
